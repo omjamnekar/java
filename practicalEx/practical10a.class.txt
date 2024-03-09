@@ -1,0 +1,85 @@
+import java.awt.*;
+import java.awt.event.*;
+import javax.swing.*;
+
+
+class innerClass extends JFrame{
+
+	JLabel l1;
+	public innerClass(){
+
+		
+	JTextField t1= new JTextField();
+	l1 = new JLabel();
+	addMouseListener(new mouseDemo());
+	addWindowListener(new windoWDemo());	
+	add(l1);	
+	add(t1);
+	
+	t1.addKeyListener(new keyDemo());
+	FlowLayout ft =new FlowLayout();
+	setLayout(ft);
+	setSize(500,500);
+		
+	setVisible(true);
+	
+	}
+
+
+	class mouseDemo extends MouseAdapter{
+
+		public mouseClicked(MouseEvent e){
+			
+			l1.setText("Mouse clicked");
+		}
+		public mouseReleased(MouseEvent e){
+			l1.setText("Mouse released");
+		}
+		public mousePressed(MouseEvent e){
+			l1.setText("Mouse Pressed");
+		}
+		
+	}
+
+
+
+
+	class keyDemo extends KeyAdapter{
+
+		public keyPressed(KeyEvent e){
+			
+			l1.setText("key Pressed");
+		}
+		public keyReleased(KeyEvent e){
+			l1.setText("key Released");
+		}
+		public keyTyped(KeyEvent e){
+			l1.setText("key Typed");
+		}
+		
+	}
+
+
+	class windowDemo extends WindowAdapter{
+
+		public windowOpened(WindowEvent e){
+			
+			l1.setText("window Opened");
+		}
+		public windowClosed(WindowEvent e){
+			l1.setText("window Closed");
+		}
+		
+		
+	}
+
+	 
+}
+
+
+class practical10a{
+
+	public static void main(String args[]){
+		innerClass f =new innerClass();
+	}
+}
