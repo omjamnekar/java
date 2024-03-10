@@ -35,7 +35,8 @@ class gui extends WindowAdapter implements KeyListener{
 
 
 	public void  windowClosed(WindowEvent e){
-		System.out.println("Window Closed");
+		System.out.println("Window Closed"); 
+
 		}
 
 	
